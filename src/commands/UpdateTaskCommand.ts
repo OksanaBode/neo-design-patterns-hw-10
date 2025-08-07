@@ -15,7 +15,8 @@ export class UpdateTaskCommand extends AbstractCommand {
 
   execute(): void {
     const current = this.taskList.getTask(this.taskId);
-    if (!current) return;
+    if (!current) 
+      return;
 
     this.oldTask = { ...current };
     this.taskList.updateTask(this.taskId, this.updates);
