@@ -36,7 +36,5 @@ export class TaskList {
     getAllTasks(): Task[] {
         return Array.from(this.tasks.values());
     }
-    getTask(id: string): Task | undefined {
-    return this.tasks.get(id);
-  }
+    
 } 

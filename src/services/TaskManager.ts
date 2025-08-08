@@ -26,11 +26,15 @@ export class TaskManager {
   }
 
   updateTask(id: string, updates: Partial<Task>): void {
-    this.history.executeCommand(new UpdateTaskCommand(this.taskList, id, updates));
+    this.history.executeCommand(
+      new UpdateTaskCommand(this.taskList, id, updates)
+    );
   }
 
   completeTask(id: string, completed: boolean = true): void {
-     this.history.executeCommand(new CompleteTaskCommand(this.taskList, id, completed));
+    this.history.executeCommand(
+      new CompleteTaskCommand(this.taskList, id, completed)
+    );
   }
 
   undo(): void {

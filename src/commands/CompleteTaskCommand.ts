@@ -16,12 +16,12 @@ export class CompleteTaskCommand extends AbstractCommand {
   execute(): void {
     const task = this.taskList.completeTask(this.taskId, this.completed);
     if (task) {
-      this.previousState = task.completed;
+      this.previousState = !this.completed;
     }
   }
 
   undo(): void {
-    if (typeof this.previousState === 'boolean') {
+    if (this.previousState !== undefined) {
       this.taskList.completeTask(this.taskId, this.previousState);
     }
   }
